@@ -1,0 +1,187 @@
+.producto {
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    max-width: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 600px;
+}
+
+.partearriba {
+    background-color: rgba(42, 13, 56, 0.4); 
+    -webkit-box-shadow: 0px 5px 20px black; 
+            box-shadow: 0px 5px 20px black;
+    width: 100%;
+}
+
+.producto img {
+    background-color: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 4px 20px rgba(0,0,0,0.5);
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.5);
+    height: 130px;
+    padding: 10px;
+    width: 130px;
+}
+
+.datosInd {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-left: 30px;
+    width: 100%;
+}
+
+.nombreDatos, .marcaDatos, .precioDatos {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3)
+}
+
+.marcaDatos {
+    font-weight: 400;
+}
+
+.precioDatos {
+    color: rgb(255, 239, 21);
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-left: auto;
+    padding-top: 5px;
+    text-align: center;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+.precioDatos span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.lista{
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+}
+
+.lista h5{
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.lista-item-titulo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 5px;
+    padding: 20px 0 3px 0;
+    text-transform: uppercase;
+}
+
+.lista-item-titulo h5 {
+    color: #ddd;
+    font-weight: 600;
+    text-decoration: underline;
+    width: 33%;
+}
+.lista-item {
+    color: #eee;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.lista-item h5 {
+    font-weight: 400;
+    width: 33%;
+    
+}
+
+.lista-item-precio {
+    color: yellow;
+}
+
+.nuevo-historial {
+    background-color: rgb(247, 247, 108);
+    border-radius: 15px;
+    border: none;
+    color: #777;    
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    
+    padding: 10px 15px;
+    position: relative;
+    top: -10px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.nuevo-historial:hover {
+    background-color: rgb(255, 238, 0);
+    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    color: black;
+    cursor: pointer;
+    top: -15px;
+}
+
+@media screen and (max-width: 720px) {
+    .producto{
+        width: 88%;
+    }
+    .producto img {
+        width: 90px;
+        height: 90px;
+    }
+    .nombreDatos {
+        font-size: 18px;
+    }
+    .marcaDatos {
+        font-size: 14px;
+        margin:0;
+    }
+    .precioDatos {
+        font-size: 12px;
+    }
+    .precioDatos span {
+        font-size: 22px;
+    }
+    .datosInd {
+        padding-left: 10px;
+    }
+    .lista {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .producto{
+        width: 92%;
+    }
+    .precioDatos {
+        font-size: 10px;
+    }
+    .precioDatos span {
+        font-size: 18px;
+    }
+    .lista {
+        width: 90%;
+    }
+}
