@@ -1,0 +1,58 @@
+.App-Header {
+    background-color: rgba(0,0,0,0.5);
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.App-header-container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between
+}
+
+.App-Header__h1 {
+    margin: 2px 0;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.App-Header__h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+.App-header-container button {
+    font-family: 'Raleway', sans-serif;
+    padding: 1px 20px;
+    margin: 10px;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 15px;
+    color: rgba(255,255,255,0.4);
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: 0.3s;
+}
+
+.App-header-container button:hover {
+    cursor: pointer;
+    color: black;
+    border:2px solid rgb(249, 242, 55);
+    box-shadow: 0px 0px 10px rgb(249, 242, 55);
+    background-color: rgba(249, 242, 55, 0.8);
+}
+
+@media screen and (max-width: 800px) {
+    .App-header-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .App-header-container {
+        width: 90%;
+    }
+}

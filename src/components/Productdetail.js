@@ -1,23 +1,23 @@
-import React from  'react';
-import Banner from '../Banner/Banner'
-import './ProductDetail.css';
+import React from 'react';
+import './Productdetail.css';
+import config from '../config';
 
-export default class ProductDeatil extends React.Component {
-    constructor() {
-        super();
+export default class Productlist extends React.Component {
+    constructor(props) {
+        super(props);
         this.state = {
-            producto: ""
+            producto: ''
         }
     }
 
     ultimoprecio = (hist) => {
-        if (hist != undefined) {
+        if (hist !== undefined) {
             return <span>{' $ ' + hist[hist.length - 1].precio}</span>
         }
-      }
+    }
 
     crearlista = () => {
-        if (this.state.producto.historial != undefined) {
+        if (this.state.producto.historial !== undefined) {
             return this.state.producto.historial.reverse().map(dato => {
                 return (
                     <div className="lista-item">
@@ -31,7 +31,13 @@ export default class ProductDeatil extends React.Component {
     }
 
     componentWillMount() {
-        fetch('https://server-price-history.herokuapp.com/productos/' + this.props.productId)
+        fetch(config.apiUrl + 'products/' + this.props.productId, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': localStorage.getItem('token')
+            },
+            method: 'GET'
+        })
             .then(res => res.json())
             .then(product => {
                 this.setState({
@@ -40,10 +46,9 @@ export default class ProductDeatil extends React.Component {
             })
     }
 
-    render() {
-        return(
-            <div className="pagina">
-                <Banner dondeestoy={this.state.producto._id}/>
+    render () {
+        return (
+            <div className="ProductList">
                 <div className="partearriba">
                     <div className="producto">
                         <img src={this.state.producto.imagen} alt={"imagen de " + this.state.producto.name}/>
@@ -58,7 +63,7 @@ export default class ProductDeatil extends React.Component {
                 </div>
                 
                 <div className="lista">
-                    <button className="nuevo-historial">Agregar Nuevo precio</button>
+                    <button className="nuevo-historial" onClick={() => {window.location = '../actualizar/' + this.props.productId }}>Agregar Nuevo precio</button>
                     <div className="lista-item-titulo">
                         <h5 className="lista-item-fecha">Fecha</h5>
                         <h5 className="lista-item-lugar">Lugar</h5>
