@@ -41,15 +41,15 @@ export default class App extends React.Component {
                     this.state.login ?
                         <Router>
                             <div className="contenedor">
-                                <Route path={'/'} exact={true} component={Search}/>
-                                <Route path={'/nuevo-producto'} exact={true} component={newProduct}/>
+                                <Route path={process.env.PUBLIC_URL + '/'} exact={true} component={Search}/>
+                                <Route path={process.env.PUBLIC_URL + '/nuevo-producto'} exact={true} component={newProduct}/>
                                 <Route 
-                                    path={'/producto/:productId'}
+                                    path={process.env.PUBLIC_URL + '/producto/:productId'}
                                     exact={true}
                                     render={({match}) => <Productdetail productId={match.params.productId}/>}
                                 />
                                 <Route 
-                                    path={'/actualizar/:productId'}
+                                    path={process.env.PUBLIC_URL + '/actualizar/:productId'}
                                     exact={true}
                                     render={({match}) => <ProductUpdate productId={match.params.productId}/>}
                             />
@@ -58,8 +58,8 @@ export default class App extends React.Component {
                         :
                         <Router>
                             <div>
-                                <Route path={'/'} exact={true} component={Login} />
-                                <Route path={'/register'} exact={true} component={Register} />
+                                <Route path={process.env.PUBLIC_URL + '/'} exact={true} component={Login} />
+                                <Route path={process.env.PUBLIC_URL + '/register'} exact={true} component={Register} />
                             </div>
                         </Router>
                 }
