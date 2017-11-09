@@ -1,5 +1,6 @@
 import React from 'react';
 import config from '../config';
+import { Link } from 'react-router-dom';
 import './ProductUpdate.css';
 
 export default class UpdateProduct extends React.Component {
@@ -71,7 +72,9 @@ export default class UpdateProduct extends React.Component {
             <div className="update">
                 <div className="partearriba">
                     <div className="producto">
-                        <a href={process.env.PUBLIC_URL + '/producto/' + this.props.productId}><img src={this.state.producto.imagen} alt={"imagen de " + this.state.producto.name}/></a>
+                        <Link to={process.env.PUBLIC_URL + '/producto/' + this.props.productId}>
+                            <img src={this.state.producto.imagen} alt={"imagen de " + this.state.producto.name}/>
+                        </Link>
                         <div className="datosInd">
                             <h2 className="nombreDatos">{this.state.producto.nombre}</h2>
                             <h3 className="marcaDatos">{this.state.producto.marca}</h3>

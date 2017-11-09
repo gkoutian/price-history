@@ -53,7 +53,7 @@ export default class App extends React.Component {
                                     path={process.env.PUBLIC_URL + '/actualizar/:productId'}
                                     exact={true}
                                     render={({match}) => <ProductUpdate productId={match.params.productId}/>}
-                            />
+                                />
                             </div>
                         </Router>
                         :
