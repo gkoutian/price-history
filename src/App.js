@@ -41,6 +41,7 @@ export default class App extends React.Component {
                     this.state.login ?
                         <Router>
                             <div className="contenedor">
+                                <Route basename="/price-history"/>
                                 <Route path={process.env.PUBLIC_URL + '/'} exact={true} component={Search}/>
                                 <Route path={process.env.PUBLIC_URL + '/nuevo-producto'} exact={true} component={newProduct}/>
                                 <Route 
