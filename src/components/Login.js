@@ -30,7 +30,7 @@ export default class Login extends React.Component {
             .then(r => {
                 if (r) {
                     localStorage.setItem('token', r.token);
-                    window.location = './'
+                    window.location = process.env.PUBLIC_URL + '/'
                 } else {
                     alert ('No te pudiste loguear')
                 }
@@ -59,7 +59,7 @@ export default class Login extends React.Component {
                 <h5>Password</h5>
                 <input type="password"onChange={this.handlePassword} placeholder="Ingrese password"/><br/>
                 <button onClick={this.login} className="login__button">Ingresar</button><br/>
-                <p>No tenes user? <a href="/register">Registrate</a></p>
+                <p>No tenes user? <a href={process.env.PUBLIC_URL + '/register'}>Registrate</a></p>
             </div>
         )
     }

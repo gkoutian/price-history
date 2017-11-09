@@ -20,7 +20,7 @@ export default class App extends React.Component {
 
     borrarToken = () => {
         localStorage.clear();
-        window.location = '../';
+        window.location = process.env.PUBLIC_URL + '/';
     }
 
     render() {
@@ -28,7 +28,7 @@ export default class App extends React.Component {
             <div className="App">
                 <header className="App-Header">
                     <div className="App-header-container">
-                        <h1 className="App-Header__h1"><a href="../">Price History</a></h1>
+                        <h1 className="App-Header__h1"><a href={process.env.PUBLIC_URL + '/'}>Price History</a></h1>
                         {this.state.login ?
                          <button onClick={this.borrarToken}>Salir</button>
                          :

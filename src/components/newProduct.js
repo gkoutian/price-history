@@ -45,7 +45,7 @@ export default class newProduct extends React.Component {
         .then(r => {
             if (r.status === 201) {
                 alert('Registrado con exito')
-                window.location.href = '/';
+                window.location.href = process.env.PUBLIC_URL + '/';
             } else {
                 alert('No se pudo registrar')
             }})

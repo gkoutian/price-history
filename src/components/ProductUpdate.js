@@ -59,7 +59,7 @@ export default class UpdateProduct extends React.Component {
             .then(r => {
                 if (r.status === 201) {
                     alert('Actualizad con exito')
-                    window.location.href = '/producto/' + this.props.productId;
+                    window.location.href = process.env.PUBLIC_URL + '/producto/' + this.props.productId;
                 } else {
                     alert('No se pudo actualizar')
                 }})
@@ -71,7 +71,7 @@ export default class UpdateProduct extends React.Component {
             <div className="update">
                 <div className="partearriba">
                     <div className="producto">
-                        <a href={'../producto/' + this.props.productId}><img src={this.state.producto.imagen} alt={"imagen de " + this.state.producto.name}/></a>
+                        <a href={process.env.PUBLIC_URL + '/producto/' + this.props.productId}><img src={this.state.producto.imagen} alt={"imagen de " + this.state.producto.name}/></a>
                         <div className="datosInd">
                             <h2 className="nombreDatos">{this.state.producto.nombre}</h2>
                             <h3 className="marcaDatos">{this.state.producto.marca}</h3>

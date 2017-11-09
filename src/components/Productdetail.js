@@ -63,7 +63,7 @@ export default class Productlist extends React.Component {
                 </div>
                 
                 <div className="lista">
-                    <button className="nuevo-historial" onClick={() => {window.location = '../actualizar/' + this.props.productId }}>Agregar Nuevo precio</button>
+                    <button className="nuevo-historial" onClick={() => {window.location = process.env.PUBLIC_URL +  '/actualizar/' + this.props.productId }}>Agregar Nuevo precio</button>
                     <div className="lista-item-titulo">
                         <h5 className="lista-item-fecha">Fecha</h5>
                         <h5 className="lista-item-lugar">Lugar</h5>

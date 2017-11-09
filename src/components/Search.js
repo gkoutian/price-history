@@ -23,7 +23,7 @@ export default class Search extends React.Component {
               {this.state.resultados.map(r => {
                 return (
                   <li key={r._id}>
-                    <Link to={'/producto/' + r._id}>
+                    <Link to={process.env.PUBLIC_URL + '/producto/' + r._id}>
                       <img src={r.imagen} alt={"Imagen de " + r.nombre}/>
                       <div className="datos">
                         <div className="texto">
@@ -73,7 +73,7 @@ export default class Search extends React.Component {
         return (
             <div className="search">
                 <h2>Si compraste algo, registralo aca y despues mira el historial de precios</h2>
-                <button onClick={() => window.location = './nuevo-producto'}>Si el producto no exite, crealo!</button>
+                <button onClick={() => window.location = process.env.PUBLIC_URL + '/nuevo-producto'}>Si el producto no exite, crealo!</button>
                 <input type="text" placeholder="Ingrese el producto a buscar" className="search__input" onChange={this.onChangeInput}/>
                 {this.getResultados()}
             </div>
