@@ -1,23 +1,30 @@
 # Price-History
 
+
+## Descripcion
+
 Proyecto hecho en React.js que se conecta con el servidor de "Server-price-history".
 Hecho para guardar el historial de precios de productos.
 
-## Pasos para iniciar el servidor
+## Dependencias 
 
-Para ver como funciona visita: [gkoutian.github.io/price-history](http://gkoutian.github.io/price-history)	
-
-## Pre - requisitos
-
-Para empezar es necesario tener instalado Node.js
+- Node.js
+- NPM
+- Editor al gusto del desarrollador
 
 ## Pasos para iniciar el servidor
 
-Primero cargar todos los modulos de node necesarios:
+**Clone e instalar dependencias**
 ```
-$ npm install
+> git clone urlproyecto
+> cd price-history
+> npm install
 ```
-Para iniciar la pagina
+**Arrancar el proyecto**
 ```
 $ npm start
 ```
+
+Visitar el proyecto: [www.gustavokoutian.com/proyectos/price-history/](https://www.gustavokoutian.com/proyectos/price-history/)
+
+![imagen de la pagins](https://raw.githubusercontent.com/gkoutian/price-history/master/img/sample.png)
