@@ -28,7 +28,8 @@ export default class App extends React.Component {
             <div className="App">
                 <header className="App-Header">
                     <div className="App-header-container">
-                        <h1 className="App-Header__h1"><a href={process.env.PUBLIC_URL + '/'}>Price History</a></h1>
+                        <h1 className="App-Header__h1"><a href={process.env.PUBLIC_URL + '/'}>Price-History</a> </h1>
+                        
                         {this.state.login ?
                          <button onClick={this.borrarToken}>Salir</button>
                          :
@@ -39,9 +40,8 @@ export default class App extends React.Component {
                 <div className="App-Intro">
                 {
                     this.state.login ?
-                        <Router>
+                        <Router basename={'/price-history'}>
                             <div className="contenedor">
-                                <Route basename="/price-history"/>
                                 <Route path={process.env.PUBLIC_URL + '/'} exact={true} component={Search}/>
                                 <Route path={process.env.PUBLIC_URL + '/nuevo-producto'} exact={true} component={newProduct}/>
                                 <Route 
@@ -57,7 +57,7 @@ export default class App extends React.Component {
                             </div>
                         </Router>
                         :
-                        <Router>
+                        <Router basename={'/price-history'}>
                             <div>
                                 <Route path={process.env.PUBLIC_URL + '/'} exact={true} component={Login} />
                                 <Route path={process.env.PUBLIC_URL + '/register'} exact={true} component={Register} />
