@@ -16,6 +16,14 @@
     padding: 12px 20px;
 }
 
+.update-product input::-webkit-input-placeholder {
+    color: #ccc;    
+}
+
+.update-product input:-moz-placeholder {
+    color: #fff;    
+}
+
 
 .update-product .product-data {
     width: 50%;
@@ -32,9 +40,16 @@
 .update-product .product-place {
     width: 70%;    
 }
+.update-product .product-price {
+    width: 50%;    
+}
+
 
 @media screen and (max-width: 650px) {
     .update-product .product-place {
+        width: 100%;    
+    }
+    .update-product .product-price {
         width: 100%;    
     }
 }

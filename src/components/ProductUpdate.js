@@ -38,7 +38,7 @@ export default class UpdateProduct extends React.Component {
     };
 
     create = () => {
-        if (this.state.precio == '' || this.state.lugar == '') {
+        if (this.state.precio === '' || this.state.lugar === '') {
             alert('Debe ingresar los datos')
         } else {
             let d = new Date();
@@ -85,15 +85,14 @@ export default class UpdateProduct extends React.Component {
                     <h4>Ingrese el nuevo precio del producto</h4>
                     <div className="product-data">
                     <div className="product-place">
-                            <h5>Lugar</h5>
                             <input type="text" onChange={this.createHandler('lugar')}  placeholder="Ingrese lugar"/><br/>
                         </div>
                         <div className="product-price">
-                            <h5>Precio</h5>
                             <input type="number" onChange={this.createHandler('precio')} placeholder="Ingrese precio"/><br/>
+                            <button onClick={this.create} className="create__button">Crear</button><br/>
                         </div>
                     </div>
-                    <button onClick={this.create} className="create__button">Crear</button><br/>
+                    
                 </div>
             </div>
         )

@@ -41,14 +41,15 @@ export default class Search extends React.Component {
               </ul>
             </div>
           )
-        } else {
-          console.log("vacio")
         }
       }
 
     onChangeInput = (e) => {
         let search = e.target.value;
         if (search !== "") {
+          if (window.innerWidth <= 415) {
+            document.getElementById('welcome-text').style.display = "none"
+          }
            fetch(config.apiUrl + 'products/buscar/' + search, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,6 +64,7 @@ export default class Search extends React.Component {
             })
           })
         } else {
+          document.getElementById('welcome-text').style.display = "block"
           this.setState({
             resultados: []
           })
@@ -72,10 +74,11 @@ export default class Search extends React.Component {
     render () {
         return (
             <div className="search">
-                <h2>Si compraste algo, registralo aca y despues mira el historial de precios</h2>
-                <button onClick={() => window.location = process.env.PUBLIC_URL + '/nuevo-producto'}>Si el producto no exite, crealo!</button>
+                <h2 id="welcome-text">Si compraste algo, registralo aca y despues mira el historial de precios</h2>
+                
                 <input type="text" placeholder="Ingrese el producto a buscar" className="search__input" onChange={this.onChangeInput}/>
                 {this.getResultados()}
+                <button onClick={() => window.location = process.env.PUBLIC_URL + '/nuevo-producto'}>Si el producto no exite, crealo aca!</button>
             </div>
         )
     }

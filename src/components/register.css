@@ -37,6 +37,14 @@
     padding: 12px 20px;
 }
 
+.register input::-webkit-input-placeholder {
+    color: #ccc;    
+}
+
+.register input:-moz-placeholder {
+    color: #fff;    
+}
+
 .register p {
     font-size: 13px;
 }

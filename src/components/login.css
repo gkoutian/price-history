@@ -37,6 +37,14 @@
     padding: 12px 20px;
 }
 
+.login input::-webkit-input-placeholder {
+    color: #ccc;    
+}
+
+.login input:-moz-placeholder {
+    color: #fff;    
+}
+
 .login p {
     font-size: 13px;
 }

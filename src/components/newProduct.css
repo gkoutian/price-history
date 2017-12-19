@@ -45,6 +45,13 @@
     width: 60%;
     padding: 12px 20px;
 }
+.newProduct input::-webkit-input-placeholder {
+    color: #ccc;    
+}
+
+.newProduct input:-moz-placeholder {
+    color: #fff;    
+}
 
 .product-data {
     width: 70%;
