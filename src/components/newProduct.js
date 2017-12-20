@@ -26,21 +26,33 @@ export default class newProduct extends React.Component {
         let d = new Date();
         let nowDate = d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
         let envio = {};
+        let data = new FormData()
+        data.append('file', document.getElementById('file-input').files[0])
         envio.nombre = this.state.nombre;
         envio.marca = this.state.marca;
-        envio.imagen = this.state.imagen;
         envio.historial = [{
             precio: this.state.precio,
             lugar: this.state.lugar,
             fecha: nowDate
         }]
-        fetch(config.apiUrl + 'products', {
+        fetch(config.apiUrl + 'upload', {
             headers: {
-                'Content-Type': 'application/json',
                 'x-access-token': localStorage.getItem('token')
             },
-            body: JSON.stringify(envio),
+            body: data,
             method: 'POST'
+        })
+        .then(r => r.json())
+        .then(r => {
+            envio.imagen = r.filename;
+            return fetch(config.apiUrl + 'products', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-access-token': localStorage.getItem('token')
+                },
+                body: JSON.stringify(envio),
+                method: 'POST'
+            })
         })
         .then(r => {
             if (r.status === 201) {
@@ -49,6 +61,7 @@ export default class newProduct extends React.Component {
             } else {
                 alert('No se pudo registrar')
             }})
+        
     }
 
     render () {
@@ -60,7 +73,7 @@ export default class newProduct extends React.Component {
                 <h5>Marca</h5>
                 <input type="text" onChange={this.createHandler('marca')}  placeholder="Ingrese marca"/><br/>
                 <h5>Link de imagen (opcional)</h5>
-                <input type="text" onChange={this.createHandler('imagen')}  placeholder="Ingrese imagen"/><br/>
+                <input id="file-input" type="file" accept="image/*"/><br/>
                 <div className="product-data">
                     <div className="product-price">
                         <h5>Precio</h5>
@@ -71,7 +84,7 @@ export default class newProduct extends React.Component {
                         <input type="text" onChange={this.createHandler('lugar')}  placeholder="Ingrese lugar"/><br/>
                     </div>
                 </div>
-                <button onClick={this.create} className="create__button">Crear</button><br/>
+                <button onClick={this.create} className="create__button">Registrar</button><br/>
             </div>
         )
     }
